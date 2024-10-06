@@ -3,7 +3,7 @@ import Modal from "./components/UI/Modal/Modal.tsx";
 import {useState} from "react";
 
 
-function App() {
+const App = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
 
   const cancel = () => setShowModal(false);
@@ -24,7 +24,8 @@ function App() {
   return (
       <>
           <div className='text-center mt-5'>
-              <button onClick={() => setShowModal(true)}>Open modal-window</button>
+              <button className= 'btn btn-outline-light btn-lg text-uppercase'
+                      onClick={() => setShowModal(true)}>Click me</button>
           </div>
 
           <Modal
@@ -38,6 +39,6 @@ function App() {
 
       </>
   );
-}
+};
 
 export default App;
