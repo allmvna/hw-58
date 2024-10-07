@@ -4,7 +4,6 @@ interface ModalProps extends React.PropsWithChildren {
   title: string;
   show: boolean;
   closeModal: () => void;
-
   arrayConfigButtons: {
     type: string;
     label: string;
