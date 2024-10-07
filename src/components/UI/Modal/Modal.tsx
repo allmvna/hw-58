@@ -11,11 +11,17 @@ interface ModalProps extends React.PropsWithChildren {
   }[];
 }
 
-const Modal: React.FC<ModalProps> = ({ show, children, closeModal, title, arrayConfigButtons }) => {
+const Modal: React.FC<ModalProps> = ({
+  show,
+  children,
+  closeModal,
+  title,
+  arrayConfigButtons,
+}) => {
   return (
     <>
       {show && (
-        <div className="modal-backdrop show" style={{ display: "block" }}  />
+        <div className="modal-backdrop show" style={{ display: "block" }} />
       )}
       <div className="modal show" style={{ display: show ? "block" : "none" }}>
         <div className="modal-dialog">
@@ -27,13 +33,13 @@ const Modal: React.FC<ModalProps> = ({ show, children, closeModal, title, arrayC
             <div className="p-3">{children}</div>
             <div className="modal-footer">
               {arrayConfigButtons.map((button, index) => (
-                  <button
-                      key={index}
-                      className={`btn btn-${button.type}`}
-                      onClick={button.onClick}
-                  >
-                    {button.label}
-                  </button>
+                <button
+                  key={index}
+                  className={`btn btn-${button.type}`}
+                  onClick={button.onClick}
+                >
+                  {button.label}
+                </button>
               ))}
             </div>
           </div>
